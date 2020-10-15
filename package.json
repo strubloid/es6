@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "a": "nodemon algorithms/study.js"
+    "a": "nodemon algorithms/study.js",
+    "sales": "nodemon algorithms/sales-by-match.js",
+    "valley": "nodemon algorithms/counting-valleys.js",
+    "jump": "nodemon algorithms/jumping-on-the-clouds.js",
+    "repeat": "nodemon algorithms/repeated-string.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
