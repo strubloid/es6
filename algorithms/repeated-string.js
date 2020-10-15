@@ -50,7 +50,6 @@ function main() {
     // var s = 'jdiacikk';
     // var n = 899491;
     // result = 112436
-
     console.time('repeatedString');
     let result = repeatedString(s, n);
     console.timeEnd('repeatedString');
