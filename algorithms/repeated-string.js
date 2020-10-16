@@ -1,14 +1,5 @@
 'use strict';
 
-function createFullString(s,n){
-    var stringSize = s.length;
-    var repetition = parseInt(n / stringSize);
-    var extra = n % stringSize;
-    console.log(repetition)
-    console.log(extra)
-
-    return  s.repeat(repetition) + s.substring(0,extra);
-}
 function countCharacters(char, string) {
     return string.split('').reduce((acc, ch) => ch === char ? acc + 1: acc, 0)
 }
@@ -16,32 +7,23 @@ function countCharacters(char, string) {
 // Complete the repeatedString function below.
 function repeatedString(s, n) {
 
-    if (s.length === 1){
-        return n;
-    }
+    // count how many a's its in the string 's'
+    var aCounter = countCharacters('a', s);
 
     var stringSize = s.length;
     var repetition = parseInt(n / stringSize);
 
-    return repetition;
+    // part 1
+    var total = aCounter * repetition;
 
-    // const fullString = createFullString(s,n);
-    // const uniqueStrings = [...new Set(fullString)];
-    // let repeatedStringSize = 0;
-    // let counter = 0;
-    // uniqueStrings.forEach(element => {
-    //     counter = countCharacters(element, fullString);
-    //     if (counter > repeatedStringSize){
-    //         repeatedStringSize = counter;
-    //     }
-    // });
-    // return repeatedStringSize;
+    var extra = s.substring(0,n % stringSize);
+    total += countCharacters('a', extra);
+
+    return total;
+
 }
 
 function main() {
-
-    // var s = 'aba';
-    // var n = 10;
 
     var s = 'cfimaakj';
     var n = 554045874191;
@@ -50,6 +32,7 @@ function main() {
     // var s = 'jdiacikk';
     // var n = 899491;
     // result = 112436
+
     console.time('repeatedString');
     let result = repeatedString(s, n);
     console.timeEnd('repeatedString');
